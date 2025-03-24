@@ -64,7 +64,6 @@
             text-shadow: 0px 0px 10px gold;
         }
         .content {
-            display: none;
             margin-top: 10px;
             background: gold;
             color: black;
@@ -72,6 +71,12 @@
             border: 2px solid black;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.6);
+        }
+        .achievement-item {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            margin-top: 5px;
         }
         footer {
             position: absolute;
@@ -90,17 +95,37 @@
     <div class="big-text">❤️❤️❤️❤️</div>
     <h1>Welcome to S+A</h1>
     <div class="achievements" onclick="toggleAchievements()">Achievements</div>
-    <div class="content" id="achievementsContent">1 - Sat down ❤️ together 
-    2 - saim gave £5 to her ❤️
-    3 - Alishba gave bracelets to saim ❤️
-    4 - more soon </div>
+    <div class="content" id="achievementsContent">
+        <div class="achievement-item">1 - Sat down ❤️ together</div>
+        <div class="achievement-item">2 - Saim gave £5 to her ❤️</div>
+        <div class="achievement-item">3 - Alishba gave bracelets to Saim ❤️</div>
+        <div class="achievement-item">4 - More soon</div>
+    </div>
     
     <footer>© Made by ..... Guess</footer>
     
     <script>
+        let achievementsVisible = false;
         function toggleAchievements() {
-            var content = document.getElementById("achievementsContent");
-            content.style.display = content.style.display === "block" ? "none" : "block";
+            var items = document.querySelectorAll(".achievement-item");
+            if (!achievementsVisible) {
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.display = "block";
+                        item.style.opacity = "1";
+                    }, index * 500);
+                });
+            } else {
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = "0";
+                        setTimeout(() => {
+                            item.style.display = "none";
+                        }, 500);
+                    }, index * 500);
+                });
+            }
+            achievementsVisible = !achievementsVisible;
         }
     </script>
 </body>
