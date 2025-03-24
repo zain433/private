@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: gold;
+            text-align: center;
+            position: relative;
+        }
+        .circle {
+            position: absolute;
+            top: 20px;
+            width: 80px;
+            height: 80px;
+            background: gold;
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px gold;
+        }
+        .big-text {
+            font-size: 4em;
+            font-weight: bold;
+            margin-top: 100px;
+            text-shadow: 0px 0px 15px gold;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0px 0px 10px gold;
+        }
+        .achievements {
+            margin-top: 20px;
+            background: gold;
+            color: black;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            border: 3px solid black;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+        .achievements:hover {
+            background: black;
+            color: gold;
+            border: 3px solid gold;
+            text-shadow: 0px 0px 10px gold;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+            background: gold;
+            color: black;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.6);
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: gold;
+            color: black;
+            text-shadow: 0px 0px 5px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle">S+A</div>
+    <div class="big-text">❤️❤️❤️❤️</div>
+    <h1>Welcome to S+A</h1>
+    <div class="achievements" onclick="toggleAchievements()">Achievements</div>
+    <div class="content" id="achievementsContent">1 - Sat down ❤️ together 
+    2 - saim gave £5 to her ❤️
+    3 - Alishba gave bracelets to saim ❤️
+    4 - more soon </div>
+    
+    <footer>© Made by ..... Guess</footer>
+    
+    <script>
+        function toggleAchievements() {
+            var content = document.getElementById("achievementsContent");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
